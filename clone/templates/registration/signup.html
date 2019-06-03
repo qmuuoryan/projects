@@ -1,0 +1,21 @@
+{% extends "registration/base.html" %}
+{% load bootstrap3 %}
+{% block content %}
+
+<div class="container w3-card-2 col-md-4" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .5);margin-top: 30px;margin-bottom: 30px; float: right; margin-right: 430px;">
+  <h1 style="font-family: 'Lobster', cursive; text-align:center">AWWWARDS CLONE</h1>
+  <p style="text-align:center;">Sign up to see photos and videos from your friends</p>
+  {% comment %} <a class="btn btn-primary"  style="width:300px;margin-left: 50px" href="https://www.facebook.com/?style=lo&jlou=Afdyn6LOdWlD07KJWyK5aslM_vDUF6wd_TyM6SfIPmNS7lIv_K_BN74Z82aOD8nU7GGXVd3ve4jXZYjIge-r72GWQtF-j-_zMg_SPy9aZ3BntQ&smuh=17011&lh=Ac_twoXLBut_lBmv">Login in with Facebook</a>
+  <h5 style="text-align:center;">OR</h5> {% endcomment %}
+  <form action="" method="POST" style="width:300px; display:block; margin:auto">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary btn-sm" value="Sign Up" style="width:300px;">
+    </div>
+  
+    <input type="hidden" name="next" value="{{next}}">
+  </form>
+</div>
+
+{% endblock %}
