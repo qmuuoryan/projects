@@ -46,6 +46,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 config('ALLOWED_HOSTS', cast=Csv())
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -92,8 +93,8 @@ ROOT_URLCONF = 'awards.urls'
 
 
 UPLOADCARE = {
-    'pub_key': 'YOUR_PUBLIC_KEY',
-    'secret': 'YOUT_PRIVATE_KEY',
+    'pub_key': '599ecea1d9b08e821dff',
+    'secret': 'a90daeadd977cd1514af',
 }
 
 TEMPLATES = [
@@ -115,6 +116,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'awards.wsgi.application'
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'clone',
+        'USER': 'ryan',
+        'PASSWORD':'qwerty',
+    }
+}
 
 
 
